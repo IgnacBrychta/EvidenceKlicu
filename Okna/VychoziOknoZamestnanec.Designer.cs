@@ -34,12 +34,6 @@ partial class VychoziOknoZamestnanec
 		buttonZavrit = new Button();
 		buttonOk = new Button();
 		tabulkaKlice = new DataGridView();
-		IdKlice = new DataGridViewTextBoxColumn();
-		NazevMistnosti = new DataGridViewTextBoxColumn();
-		OznaceniDveri = new DataGridViewTextBoxColumn();
-		Stav = new DataGridViewTextBoxColumn();
-		Zapujcit = new DataGridViewTextBoxColumn();
-		Vratit = new DataGridViewTextBoxColumn();
 		groupBox1 = new GroupBox();
 		groupBox7 = new GroupBox();
 		groupBox6 = new GroupBox();
@@ -48,6 +42,11 @@ partial class VychoziOknoZamestnanec
 		groupBox4 = new GroupBox();
 		groupBox3 = new GroupBox();
 		groupBox2 = new GroupBox();
+		IdKlice = new DataGridViewTextBoxColumn();
+		NazevMistnosti = new DataGridViewTextBoxColumn();
+		OznaceniDveri = new DataGridViewTextBoxColumn();
+		Stav = new DataGridViewTextBoxColumn();
+		Akce = new DataGridViewTextBoxColumn();
 		((System.ComponentModel.ISupportInitialize)tabulkaKlice).BeginInit();
 		groupBox1.SuspendLayout();
 		groupBox7.SuspendLayout();
@@ -107,46 +106,12 @@ partial class VychoziOknoZamestnanec
 		// tabulkaKlice
 		// 
 		tabulkaKlice.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-		tabulkaKlice.Columns.AddRange(new DataGridViewColumn[] { IdKlice, NazevMistnosti, OznaceniDveri, Stav, Zapujcit, Vratit });
+		tabulkaKlice.Columns.AddRange(new DataGridViewColumn[] { IdKlice, NazevMistnosti, OznaceniDveri, Stav, Akce });
 		tabulkaKlice.Location = new Point(6, 22);
 		tabulkaKlice.Name = "tabulkaKlice";
 		tabulkaKlice.RowTemplate.Height = 25;
-		tabulkaKlice.Size = new Size(658, 239);
+		tabulkaKlice.Size = new Size(557, 239);
 		tabulkaKlice.TabIndex = 8;
-		// 
-		// IdKlice
-		// 
-		IdKlice.HeaderText = "Id";
-		IdKlice.Name = "IdKlice";
-		IdKlice.ReadOnly = true;
-		// 
-		// NazevMistnosti
-		// 
-		NazevMistnosti.HeaderText = "Název místnosti";
-		NazevMistnosti.Name = "NazevMistnosti";
-		NazevMistnosti.ReadOnly = true;
-		// 
-		// OznaceniDveri
-		// 
-		OznaceniDveri.HeaderText = "OznaceniDveri";
-		OznaceniDveri.Name = "OznaceniDveri";
-		OznaceniDveri.ReadOnly = true;
-		// 
-		// Stav
-		// 
-		Stav.HeaderText = "Stav";
-		Stav.Name = "Stav";
-		Stav.ReadOnly = true;
-		// 
-		// Zapujcit
-		// 
-		Zapujcit.HeaderText = "Zapůjčit";
-		Zapujcit.Name = "Zapujcit";
-		// 
-		// Vratit
-		// 
-		Vratit.HeaderText = "Vrátit";
-		Vratit.Name = "Vratit";
 		// 
 		// groupBox1
 		// 
@@ -158,7 +123,7 @@ partial class VychoziOknoZamestnanec
 		groupBox1.Controls.Add(groupBox2);
 		groupBox1.Location = new Point(12, 12);
 		groupBox1.Name = "groupBox1";
-		groupBox1.Size = new Size(962, 297);
+		groupBox1.Size = new Size(866, 297);
 		groupBox1.TabIndex = 9;
 		groupBox1.TabStop = false;
 		groupBox1.Text = "Zaměstnanec";
@@ -168,7 +133,7 @@ partial class VychoziOknoZamestnanec
 		groupBox7.Controls.Add(tabulkaKlice);
 		groupBox7.Location = new Point(287, 22);
 		groupBox7.Name = "groupBox7";
-		groupBox7.Size = new Size(669, 267);
+		groupBox7.Size = new Size(569, 267);
 		groupBox7.TabIndex = 7;
 		groupBox7.TabStop = false;
 		groupBox7.Text = "Zapůjčené klíče";
@@ -232,11 +197,40 @@ partial class VychoziOknoZamestnanec
 		groupBox2.TabStop = false;
 		groupBox2.Text = "Jméno";
 		// 
+		// IdKlice
+		// 
+		IdKlice.HeaderText = "Id";
+		IdKlice.Name = "IdKlice";
+		IdKlice.ReadOnly = true;
+		// 
+		// NazevMistnosti
+		// 
+		NazevMistnosti.HeaderText = "Název místnosti";
+		NazevMistnosti.Name = "NazevMistnosti";
+		NazevMistnosti.ReadOnly = true;
+		// 
+		// OznaceniDveri
+		// 
+		OznaceniDveri.HeaderText = "OznaceniDveri";
+		OznaceniDveri.Name = "OznaceniDveri";
+		OznaceniDveri.ReadOnly = true;
+		// 
+		// Stav
+		// 
+		Stav.HeaderText = "Stav";
+		Stav.Name = "Stav";
+		Stav.ReadOnly = true;
+		// 
+		// Akce
+		// 
+		Akce.HeaderText = "Akce";
+		Akce.Name = "Akce";
+		// 
 		// VychoziOknoZamestnanec
 		// 
 		AutoScaleDimensions = new SizeF(7F, 15F);
 		AutoScaleMode = AutoScaleMode.Font;
-		ClientSize = new Size(979, 311);
+		ClientSize = new Size(888, 311);
 		Controls.Add(groupBox1);
 		Margin = new Padding(4, 3, 4, 3);
 		MaximumSize = new Size(2000, 2000);
@@ -271,11 +265,10 @@ partial class VychoziOknoZamestnanec
 	private GroupBox groupBox4;
 	private GroupBox groupBox3;
 	private GroupBox groupBox2;
+	protected DataGridView tabulkaKlice;
 	private DataGridViewTextBoxColumn IdKlice;
 	private DataGridViewTextBoxColumn NazevMistnosti;
 	private DataGridViewTextBoxColumn OznaceniDveri;
 	private DataGridViewTextBoxColumn Stav;
-	private DataGridViewTextBoxColumn Zapujcit;
-	private DataGridViewTextBoxColumn Vratit;
-	protected DataGridView tabulkaKlice;
+	private DataGridViewTextBoxColumn Akce;
 }

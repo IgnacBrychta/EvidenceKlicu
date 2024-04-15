@@ -97,8 +97,6 @@ public partial class OknoZamestnanci : Form
 		}
 		else if (e.ColumnIndex == tabulkaZamestnanci.Columns["AkceOdstranitZamestnance"].Index)
 		{
-
-            // Perform actions based on the clicked row data
             DialogResult vysledek = MessageBox.Show(
                 $"Opravdu si přejete smazat zaměstnance {zamestnanec}?",
                 "Jste si jistí?",
@@ -112,35 +110,6 @@ public partial class OknoZamestnanci : Form
             }
 		}
 	}
-
-	private void Button_Click(object? sender, EventArgs e)
-    {
-       
-    }
-
-    private void pridatZamestnance_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void upravitZamestnance_Click(object sender, EventArgs e)
-    {
-        /*DialogResult result = MessageBox.Show("Chcete opravdu odstranit zaměstnance?", "Odstranění zaměstnance", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        if (result == DialogResult.Yes)
-        {
-            database.OdstranitZamestnance(zamestnanec); // nevím, jakým způsobem zjišťujeme vybraného zaměstnance
-        }*/
-    }
-
-    private void odstranitZamestnance_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-    {
-
-    }
 
     private void HlavniOkno_FormClosing(object? sender, FormClosingEventArgs e)
     {

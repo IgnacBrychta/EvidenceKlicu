@@ -67,7 +67,6 @@ partial class OknoZamestnanci
 		tabulkaZamestnanci.Name = "tabulkaZamestnanci";
 		tabulkaZamestnanci.Size = new Size(644, 540);
 		tabulkaZamestnanci.TabIndex = 0;
-		tabulkaZamestnanci.CellContentClick += dataGridView_CellContentClick;
 		// 
 		// Id
 		// 
@@ -127,21 +126,18 @@ partial class OknoZamestnanci
 		pridatZamestnance.Name = "pridatZamestnance";
 		pridatZamestnance.Size = new Size(59, 20);
 		pridatZamestnance.Text = "Přidat...";
-		pridatZamestnance.Click += pridatZamestnance_Click;
 		// 
 		// upravitZamestnance
 		// 
 		upravitZamestnance.Name = "upravitZamestnance";
 		upravitZamestnance.Size = new Size(57, 20);
 		upravitZamestnance.Text = "Upravit";
-		upravitZamestnance.Click += upravitZamestnance_Click;
 		// 
 		// odstranitZamestnance
 		// 
 		odstranitZamestnance.Name = "odstranitZamestnance";
 		odstranitZamestnance.Size = new Size(68, 20);
 		odstranitZamestnance.Text = "Odstranit";
-		odstranitZamestnance.Click += odstranitZamestnance_Click;
 		// 
 		// tabulkaKlice
 		// 

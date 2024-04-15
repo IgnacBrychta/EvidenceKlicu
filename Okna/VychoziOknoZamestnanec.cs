@@ -70,8 +70,8 @@ public partial class VychoziOknoZamestnanec : Form
 			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.Id });
 			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.NazevMistnosti });
 			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.OznaceniDveri });
-			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.StavKlice });
-
+			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.StavKlice.ActualRepresentation() });
+			
 			if(klic.StavKlice == StavKlice.Dostupny)
 			{
 				DataGridViewButtonCell tlacitkoZapujcit = new DataGridViewButtonCell()

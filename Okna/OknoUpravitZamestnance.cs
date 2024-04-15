@@ -62,12 +62,13 @@ namespace EvidenceKlicu.Okna
 			if (klic is null) return;
 
 			DataGridViewCell cell = tabulkaKlice[e.ColumnIndex, e.RowIndex];
-
-			if (e.ColumnIndex == tabulkaKlice.Columns["Zapujcit"].Index)
+			bool? zapujcit = cell.Value == "Zapůjčit";
+			if (!zapujcit.HasValue) return;
+			if ((bool)zapujcit)//e.ColumnIndex == tabulkaKlice.Columns["Zapujcit"].Index)
 			{
 				database.ZapujcitKlic(klic, zamestnanec, DateTime.Now);
 			}
-			else if (e.ColumnIndex == tabulkaKlice.Columns["Vratit"].Index)
+			else// if (e.ColumnIndex == tabulkaKlice.Columns["Vratit"].Index)
 			{
 				database.VratitKlic(klic, zamestnanec, DateTime.Now);
 			}
