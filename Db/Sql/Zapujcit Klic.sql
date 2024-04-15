@@ -1,1 +1,1 @@
-﻿INSERT INTO ZaznamyVypujceni VALUES (@KlicID, @ZamestnanecId, @DatumVypujceni, @DatumVraceni)
+﻿INSERT INTO ZaznamyVypujceni VALUES (@KlicID, @ZamestnanecId, @DatumVypujceni, NULL)

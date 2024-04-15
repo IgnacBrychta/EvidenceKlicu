@@ -72,17 +72,22 @@ public partial class VychoziOknoZamestnanec : Form
 			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.OznaceniDveri });
 			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.StavKlice });
 
-			DataGridViewButtonCell tlacitkoZapujcit = new DataGridViewButtonCell()
+			if(klic.StavKlice == StavKlice.Dostupny)
 			{
-				Value = "Zapůjčit"
-			};
-			DataGridViewButtonCell tlacitkoVratit = new DataGridViewButtonCell()
+				DataGridViewButtonCell tlacitkoZapujcit = new DataGridViewButtonCell()
+				{
+					Value = "Zapůjčit"
+				};
+				radek.Cells.Add(tlacitkoZapujcit);
+			}
+			else if(klic.StavKlice == StavKlice.ZapujcenZamestnanci)
 			{
-				Value = "Vrátit"
-			};
-			radek.Cells.Add(tlacitkoZapujcit);
-			radek.Cells.Add(tlacitkoVratit);
-
+				DataGridViewButtonCell tlacitkoVratit = new DataGridViewButtonCell()
+				{
+					Value = "Vrátit"
+				};
+				radek.Cells.Add(tlacitkoVratit);
+			}
 			tabulkaKlice.Rows.Add(radek);
 		}
 	}

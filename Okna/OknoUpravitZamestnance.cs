@@ -54,12 +54,14 @@ namespace EvidenceKlicu.Okna
 		const int indexIdKlice = 0;
 		protected override void TabulkaKlice_CellContentClick(object? sender, DataGridViewCellEventArgs e)
 		{
-			if (e.RowIndex < 0 || e.RowIndex >= tabulkaKlice.RowCount - 1) return;
+			if (e.RowIndex < 0 || e.RowIndex >= tabulkaKlice.RowCount - 1 || e.ColumnIndex < 4) return;
 
 			DataGridViewRow selectedRow = tabulkaKlice.Rows[e.RowIndex];
 			int id = (int)selectedRow.Cells[indexIdKlice].Value;
 			Klic? klic = database.ZiskatKlic(id);
 			if (klic is null) return;
+
+			DataGridViewCell cell = tabulkaKlice[e.ColumnIndex, e.RowIndex];
 
 			if (e.ColumnIndex == tabulkaKlice.Columns["Zapujcit"].Index)
 			{

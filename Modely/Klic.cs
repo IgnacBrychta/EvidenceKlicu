@@ -20,5 +20,11 @@ public class Klic
 		NazevMistnosti = nazevMistnosti;
 		OznaceniDveri = oznaceniDveri;
 		PocetVyrobenychKusu = pocetVyrobenychKusu;
+		StavKlice = stavKlice;
+	}
+
+	public override string ToString()
+	{
+		return $"{Id}: {StavKlice}";
 	}
 }

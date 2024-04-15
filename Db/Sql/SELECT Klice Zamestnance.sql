@@ -1,7 +1,7 @@
 ﻿-- ZapujcenZamestnanci = 0,
 -- Nedostupny = 1,
 -- Dostupny = 2,
-
+--DECLARE @ZamestnanecID INT = 154; 
 SELECT 
     k.Id,
     k.NazevMistnosti,

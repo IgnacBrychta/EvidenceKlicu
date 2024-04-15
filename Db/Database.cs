@@ -157,7 +157,7 @@ public class Database
 				(string)item[1],
 				(string)item[2],
 				(int)item[3],
-				(StavKlice)item[4],
+				(StavKlice)item.GetInt32(4),
 				(int)item[0]
 				);
 		}
@@ -213,15 +213,11 @@ public class Database
 
 		if (!reader.Read()) return null;
 
-		string jmeno = reader.GetString(1);
-		string prijmeni = reader.GetString(2);
-		string zkratka = reader.GetString(3);
-
 		return new Klic(
 			reader.GetString(1),
 			reader.GetString(2),
 			reader.GetInt32(3),
-			(StavKlice)reader.GetInt32(4),
+			(StavKlice)reader.GetInt32(0),
 			id
 			);
 	}
