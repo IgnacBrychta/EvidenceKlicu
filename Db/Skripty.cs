@@ -26,8 +26,9 @@ internal static class Skripty
 	public const string ZiskatKliceZamestnance = "SELECT Klice Zamestnance.sql";
 	public const string VratitKlic = "Vratit Klic.sql";
 	public const string ZapujcitKlic = "Zapujcit Klic.sql";
-
-
-
-
+	public const string ZiskatZamestnanceDluziciKlic = "SELECT Zamestnanec Klic.sql";
+	public const string PridatKlic = "INSERT Klic.sql";
+	public const string ZiskatVsechnyKlice = "SELECT all Klice.sql";
+	public const string UpravitKlic = "UPDATE Klic.sql"; 
+	public const string SmazatKlic = "DELETE Klic.sql";
 }

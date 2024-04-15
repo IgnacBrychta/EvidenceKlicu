@@ -32,6 +32,7 @@ namespace EvidenceKlicu.Okna
 			textBoxZkratka.Text = zamestnanec.Zkratka;
 
 			ObnovitTabulku(zamestnanec);
+			Text = "Upravit zaměstnance";
 		}
 
 		protected override void ButtonOk_Click(object? sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace EvidenceKlicu.Okna
 		const int indexIdKlice = 0;
 		protected override void TabulkaKlice_CellContentClick(object? sender, DataGridViewCellEventArgs e)
 		{
-			if (e.RowIndex < 0 || e.RowIndex >= tabulkaKlice.RowCount - 1 || e.ColumnIndex < 4) return;
+			if (e.RowIndex < 0 || e.RowIndex >= tabulkaKlice.RowCount - 1 || e.ColumnIndex < 7) return;
 
 			DataGridViewRow selectedRow = tabulkaKlice.Rows[e.RowIndex];
 			int id = (int)selectedRow.Cells[indexIdKlice].Value;

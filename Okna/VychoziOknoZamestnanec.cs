@@ -1,14 +1,4 @@
-﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using EvidenceKlicu.Db;
+﻿using EvidenceKlicu.Db;
 using EvidenceKlicu.Modely;
 
 namespace EvidenceKlicu.Okna;
@@ -55,7 +45,7 @@ public partial class VychoziOknoZamestnanec : Form
 
 	private void VychoziOknoZamestnanec_Load(object? sender, EventArgs e)
 	{
-		Size size = new Size(988, 350);
+		Size size = new Size(1140, 350);
 		MinimumSize = size;
 		MaximumSize = size;
 	}
@@ -68,8 +58,11 @@ public partial class VychoziOknoZamestnanec : Form
 		{
 			DataGridViewRow radek = new DataGridViewRow();
 			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.Id });
+			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.Cislo });
 			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.NazevMistnosti });
 			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.OznaceniDveri });
+			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.DatumVypujceni?.ToString() ?? "N/A" });
+			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.DatumVraceni?.ToString() ?? "N/A" });
 			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.StavKlice.ActualRepresentation() });
 			
 			if(klic.StavKlice == StavKlice.Dostupny)
@@ -92,6 +85,16 @@ public partial class VychoziOknoZamestnanec : Form
 		}
 	}
 
-	protected static void SpatneUdaje() => MessageBox.Show("ne");
-	protected static void SpravneUdaje() => MessageBox.Show("ano");
+	protected static void SpatneUdaje() => MessageBox.Show(
+		"Změna selhala, ověřte správnost údajů a připojení.",
+		"Změna selhala",
+		MessageBoxButtons.OK,
+		MessageBoxIcon.Error
+		);
+	protected static void SpravneUdaje() => MessageBox.Show(
+		"Změna provedena úspěšně.",
+		"Změna provedena",
+		MessageBoxButtons.OK,
+		MessageBoxIcon.Information
+		);
 }

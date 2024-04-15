@@ -10,4 +10,5 @@ public class DbOmezeni
 {
 	public int MaxPocetZnakuJmena { init; get; }
 	public int PocetZnakuZkratky { init; get; }
+	public int PocetCiferCislaMistnosti { init; get; }
 }

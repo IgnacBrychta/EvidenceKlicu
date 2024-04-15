@@ -11,6 +11,7 @@ public enum StavKlice
 	ZapujcenZamestnanci = 0,
 	Nedostupny = 1,
 	Dostupny = 2,
+	Neznamy = 3
 }
 public static partial class Extensions
 {
@@ -24,6 +25,8 @@ public static partial class Extensions
 				return "Nedostupný";
 			case StavKlice.ZapujcenZamestnanci:
 				return "Lze vrátit";
+			case StavKlice.Neznamy:
+				return "Neznámý";
 			default:
 				return "Chyba";
 		}

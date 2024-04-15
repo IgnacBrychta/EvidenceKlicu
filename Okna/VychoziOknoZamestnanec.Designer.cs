@@ -43,8 +43,11 @@ partial class VychoziOknoZamestnanec
 		groupBox3 = new GroupBox();
 		groupBox2 = new GroupBox();
 		IdKlice = new DataGridViewTextBoxColumn();
+		CisloKlice = new DataGridViewTextBoxColumn();
 		NazevMistnosti = new DataGridViewTextBoxColumn();
 		OznaceniDveri = new DataGridViewTextBoxColumn();
+		DatumVypujceni = new DataGridViewTextBoxColumn();
+		DatumVraceni = new DataGridViewTextBoxColumn();
 		Stav = new DataGridViewTextBoxColumn();
 		Akce = new DataGridViewTextBoxColumn();
 		((System.ComponentModel.ISupportInitialize)tabulkaKlice).BeginInit();
@@ -106,11 +109,11 @@ partial class VychoziOknoZamestnanec
 		// tabulkaKlice
 		// 
 		tabulkaKlice.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-		tabulkaKlice.Columns.AddRange(new DataGridViewColumn[] { IdKlice, NazevMistnosti, OznaceniDveri, Stav, Akce });
+		tabulkaKlice.Columns.AddRange(new DataGridViewColumn[] { IdKlice, CisloKlice, NazevMistnosti, OznaceniDveri, DatumVypujceni, DatumVraceni, Stav, Akce });
 		tabulkaKlice.Location = new Point(6, 22);
 		tabulkaKlice.Name = "tabulkaKlice";
 		tabulkaKlice.RowTemplate.Height = 25;
-		tabulkaKlice.Size = new Size(557, 239);
+		tabulkaKlice.Size = new Size(760, 239);
 		tabulkaKlice.TabIndex = 8;
 		// 
 		// groupBox1
@@ -123,7 +126,7 @@ partial class VychoziOknoZamestnanec
 		groupBox1.Controls.Add(groupBox2);
 		groupBox1.Location = new Point(12, 12);
 		groupBox1.Name = "groupBox1";
-		groupBox1.Size = new Size(866, 297);
+		groupBox1.Size = new Size(1075, 297);
 		groupBox1.TabIndex = 9;
 		groupBox1.TabStop = false;
 		groupBox1.Text = "Zaměstnanec";
@@ -133,7 +136,7 @@ partial class VychoziOknoZamestnanec
 		groupBox7.Controls.Add(tabulkaKlice);
 		groupBox7.Location = new Point(287, 22);
 		groupBox7.Name = "groupBox7";
-		groupBox7.Size = new Size(569, 267);
+		groupBox7.Size = new Size(775, 267);
 		groupBox7.TabIndex = 7;
 		groupBox7.TabStop = false;
 		groupBox7.Text = "Zapůjčené klíče";
@@ -202,6 +205,14 @@ partial class VychoziOknoZamestnanec
 		IdKlice.HeaderText = "Id";
 		IdKlice.Name = "IdKlice";
 		IdKlice.ReadOnly = true;
+		IdKlice.Width = 50;
+		// 
+		// CisloKlice
+		// 
+		CisloKlice.HeaderText = "Číslo klíče";
+		CisloKlice.Name = "CisloKlice";
+		CisloKlice.ReadOnly = true;
+		CisloKlice.Width = 50;
 		// 
 		// NazevMistnosti
 		// 
@@ -214,6 +225,18 @@ partial class VychoziOknoZamestnanec
 		OznaceniDveri.HeaderText = "OznaceniDveri";
 		OznaceniDveri.Name = "OznaceniDveri";
 		OznaceniDveri.ReadOnly = true;
+		// 
+		// DatumVypujceni
+		// 
+		DatumVypujceni.HeaderText = "Datum posl. vypůjč.";
+		DatumVypujceni.Name = "DatumVypujceni";
+		DatumVypujceni.ReadOnly = true;
+		// 
+		// DatumVraceni
+		// 
+		DatumVraceni.HeaderText = "Datum posl. vrác.";
+		DatumVraceni.Name = "DatumVraceni";
+		DatumVraceni.ReadOnly = true;
 		// 
 		// Stav
 		// 
@@ -230,7 +253,7 @@ partial class VychoziOknoZamestnanec
 		// 
 		AutoScaleDimensions = new SizeF(7F, 15F);
 		AutoScaleMode = AutoScaleMode.Font;
-		ClientSize = new Size(888, 311);
+		ClientSize = new Size(1098, 311);
 		Controls.Add(groupBox1);
 		Margin = new Padding(4, 3, 4, 3);
 		MaximumSize = new Size(2000, 2000);
@@ -267,8 +290,11 @@ partial class VychoziOknoZamestnanec
 	private GroupBox groupBox2;
 	protected DataGridView tabulkaKlice;
 	private DataGridViewTextBoxColumn IdKlice;
+	private DataGridViewTextBoxColumn CisloKlice;
 	private DataGridViewTextBoxColumn NazevMistnosti;
 	private DataGridViewTextBoxColumn OznaceniDveri;
+	private DataGridViewTextBoxColumn DatumVypujceni;
+	private DataGridViewTextBoxColumn DatumVraceni;
 	private DataGridViewTextBoxColumn Stav;
 	private DataGridViewTextBoxColumn Akce;
 }
