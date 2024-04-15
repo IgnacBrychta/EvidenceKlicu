@@ -126,8 +126,8 @@ public class Database
 
 	public IEnumerable<Klic> ZiskatVsechnyKlice()
     {
-        throw new NotImplementedException();
-    }
+		throw new NotImplementedException();
+	}
 
 	public IEnumerable<Zamestnanec> ZiskatVsechnyZamestnance()
     {
@@ -145,24 +145,47 @@ public class Database
 		}
     }
 
-	public ZapujceneKliceZamestnancem ZiskatZapujceneKlice(Zamestnanec zamestnanec)
+	public IEnumerable<Klic> ZiskatZapujceneKlice(Zamestnanec zamestnanec)
     {
-        throw new NotImplementedException();
-    }
+		string skript = NacistSkript(Skripty.ZiskatKliceZamestnance);
+		using SqlCommand prikaz = new SqlCommand(skript, sqlServerPripojeni);
+		prikaz.Parameters.AddWithValue("@ZamestnanecId", zamestnanec.Id);
+		using SqlDataReader data = prikaz.ExecuteReader();
+		foreach (DbDataRecord item in data)
+		{
+			yield return new Klic(
+				(string)item[1],
+				(string)item[2],
+				(int)item[3],
+				(StavKlice)item[4],
+				(int)item[0]
+				);
+		}
+	}
 
 	public ZapujcenyKlicZamestnancum ZiskatZapujceneKlice(Klic klic)
     {
         throw new NotImplementedException();
     }
 
-	public void ZapujcitKlic(Klic zapujcenyKlic, Zamestnanec pujcujiciZamestnanec)
+	public void ZapujcitKlic(Klic zapujcenyKlic, Zamestnanec pujcujiciZamestnanec, DateTime casVypujceni)
 	{
-		throw new NotImplementedException();
+		string skript = NacistSkript(Skripty.ZapujcitKlic);
+		using SqlCommand prikaz = new SqlCommand(skript, sqlServerPripojeni);
+		prikaz.Parameters.AddWithValue("KlicId", zapujcenyKlic.Id);
+		prikaz.Parameters.AddWithValue("ZamestnanecId", pujcujiciZamestnanec.Id);
+		prikaz.Parameters.AddWithValue("DatumVypujceni", casVypujceni);
+		_ = prikaz.ExecuteNonQuery();
 	}
 
-	public void VratitKlic(Klic zapujcenyKlic, Zamestnanec vracejiciZamestnanec)
+	public void VratitKlic(Klic zapujcenyKlic, Zamestnanec vracejiciZamestnanec, DateTime casVraceni)
 	{
-		throw new NotImplementedException();
+		string skript = NacistSkript(Skripty.VratitKlic);
+		using SqlCommand prikaz = new SqlCommand(skript, sqlServerPripojeni);
+		prikaz.Parameters.AddWithValue("KlicId", zapujcenyKlic.Id);
+		prikaz.Parameters.AddWithValue("ZamestnanecId", vracejiciZamestnanec.Id);
+		prikaz.Parameters.AddWithValue("DatumVraceni", casVraceni);
+		_ = prikaz.ExecuteNonQuery();
 	}
 
 	public Zamestnanec? ZiskatZamestnance(int id)
@@ -181,7 +204,29 @@ public class Database
 		return new Zamestnanec(jmeno, prijmeni, zkratka, id);
 	}
 
-    public void PridatNovehoZamestnance(Zamestnanec zamestnanec)
+	public Klic? ZiskatKlic(int id)
+	{
+		string skript = NacistSkript(Skripty.ZiskatKlic);
+		using SqlCommand prikaz = new SqlCommand(skript, sqlServerPripojeni);
+		prikaz.Parameters.AddWithValue("Id", id);
+		using SqlDataReader reader = prikaz.ExecuteReader();
+
+		if (!reader.Read()) return null;
+
+		string jmeno = reader.GetString(1);
+		string prijmeni = reader.GetString(2);
+		string zkratka = reader.GetString(3);
+
+		return new Klic(
+			reader.GetString(1),
+			reader.GetString(2),
+			reader.GetInt32(3),
+			(StavKlice)reader.GetInt32(4),
+			id
+			);
+	}
+
+	public void PridatNovehoZamestnance(Zamestnanec zamestnanec)
     {
         string skript = NacistSkript(Skripty.PridatZamestnance);
         using SqlCommand prikaz = new SqlCommand(skript, sqlServerPripojeni);

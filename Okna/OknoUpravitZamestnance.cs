@@ -30,6 +30,8 @@ namespace EvidenceKlicu.Okna
 			textBoxJmeno.Text = zamestnanec.Jmeno;
 			textBoxPrijmeni.Text = zamestnanec.Prijmeni;
 			textBoxZkratka.Text = zamestnanec.Zkratka;
+
+			ObnovitTabulku(zamestnanec);
 		}
 
 		protected override void ButtonOk_Click(object? sender, EventArgs e)
@@ -47,6 +49,28 @@ namespace EvidenceKlicu.Okna
 			database.UpravitZamestnance(zamestnanec);
 			OnItemsChanged(e);
 			SpravneUdaje();
+		}
+
+		const int indexIdKlice = 0;
+		protected override void TabulkaKlice_CellContentClick(object? sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0 || e.RowIndex >= tabulkaKlice.RowCount - 1) return;
+
+			DataGridViewRow selectedRow = tabulkaKlice.Rows[e.RowIndex];
+			int id = (int)selectedRow.Cells[indexIdKlice].Value;
+			Klic? klic = database.ZiskatKlic(id);
+			if (klic is null) return;
+
+			if (e.ColumnIndex == tabulkaKlice.Columns["Zapujcit"].Index)
+			{
+				database.ZapujcitKlic(klic, zamestnanec, DateTime.Now);
+			}
+			else if (e.ColumnIndex == tabulkaKlice.Columns["Vratit"].Index)
+			{
+				database.VratitKlic(klic, zamestnanec, DateTime.Now);
+			}
+
+			ObnovitTabulku(zamestnanec);
 		}
 
 		protected override void ButtonZavrit_Click(object? sender, EventArgs e)

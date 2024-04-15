@@ -35,7 +35,7 @@ public partial class OknoZamestnanci : Form
 		toolStripMenuItemNovyZamestnanec.Click += ToolStripMenuItemNovyZamestnanec_Click;
 
 #if DEBUG
-        new OknoUpravitZamestnance(database, database!.ZiskatZamestnance(133)).Show();
+        //new OknoUpravitZamestnance(database, database!.ZiskatZamestnance(133)).Show();
 #endif
     }
 

@@ -1,1 +1,0 @@
-﻿insert into ZaznamyVypujceni VALUES (26, 154, '11/19/2022', null)

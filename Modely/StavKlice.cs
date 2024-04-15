@@ -8,7 +8,7 @@ namespace EvidenceKlicu.Modely;
 
 public enum StavKlice
 {
-	Dostupny = 0,
-	ZapujcenZamestnanci = 1,
-	Nedostupny = 2,
+	ZapujcenZamestnanci = 0,
+	Nedostupny = 1,
+	Dostupny = 2,
 }

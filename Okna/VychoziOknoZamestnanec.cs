@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,7 @@ public partial class VychoziOknoZamestnanec : Form
 		this.database = database;
 		buttonOk.Click += ButtonOk_Click;
 		buttonZavrit.Click += ButtonZavrit_Click;
+		tabulkaKlice.CellContentClick += TabulkaKlice_CellContentClick;
 	}
 
 	public delegate void ItemsChangedEventHandler(object sender, EventArgs e);
@@ -34,6 +36,11 @@ public partial class VychoziOknoZamestnanec : Form
 	protected virtual void OnItemsChanged(EventArgs e)
 	{
 		ItemsChanged?.Invoke(this, e);
+	}
+
+	protected virtual void TabulkaKlice_CellContentClick(object? sender, DataGridViewCellEventArgs e)
+	{
+		throw new NotImplementedException();
 	}
 
 	protected virtual void ButtonZavrit_Click(object? sender, EventArgs e)
@@ -48,35 +55,36 @@ public partial class VychoziOknoZamestnanec : Form
 
 	private void VychoziOknoZamestnanec_Load(object? sender, EventArgs e)
 	{
-		MinimumSize = Size;
-		MaximumSize = Size;
+		Size size = new Size(988, 350);
+		MinimumSize = size;
+		MaximumSize = size;
 	}
 
-	protected void ObnovitTabulku()
+	protected void ObnovitTabulku(Zamestnanec zamestnanec)
 	{
 		tabulkaKlice.Rows.Clear();
-		IEnumerable<Klic> zamestnanci = database!.ZiskatVsechnyKlice();
-		/*foreach (Zamestnanec item in zamestnanci)
+		IEnumerable<Klic> klice = database!.ZiskatZapujceneKlice(zamestnanec);
+		foreach (Klic klic in klice)
 		{
 			DataGridViewRow radek = new DataGridViewRow();
-			radek.Cells.Add(new DataGridViewTextBoxCell { Value = item.Id });
-			radek.Cells.Add(new DataGridViewTextBoxCell { Value = item.Jmeno });
-			radek.Cells.Add(new DataGridViewTextBoxCell { Value = item.Prijmeni });
-			radek.Cells.Add(new DataGridViewTextBoxCell { Value = item.Zkratka });
+			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.Id });
+			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.NazevMistnosti });
+			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.OznaceniDveri });
+			radek.Cells.Add(new DataGridViewTextBoxCell { Value = klic.StavKlice });
 
-			DataGridViewButtonCell tlacitkoUpravit = new DataGridViewButtonCell()
+			DataGridViewButtonCell tlacitkoZapujcit = new DataGridViewButtonCell()
 			{
-				Value = "Upravit"
+				Value = "Zapůjčit"
 			};
-			DataGridViewButtonCell tlacitkoSmazat = new DataGridViewButtonCell()
+			DataGridViewButtonCell tlacitkoVratit = new DataGridViewButtonCell()
 			{
-				Value = "Odstranit"
+				Value = "Vrátit"
 			};
-			radek.Cells.Add(tlacitkoUpravit);
-			radek.Cells.Add(tlacitkoSmazat);
+			radek.Cells.Add(tlacitkoZapujcit);
+			radek.Cells.Add(tlacitkoVratit);
 
 			tabulkaKlice.Rows.Add(radek);
-		}*/
+		}
 	}
 
 	protected static void SpatneUdaje() => MessageBox.Show("ne");

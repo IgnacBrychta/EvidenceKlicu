@@ -13,7 +13,8 @@ public class Klic
 	public string NazevMistnosti { get; set; }
 	public string OznaceniDveri {  get; set; }
 	public int PocetVyrobenychKusu { get; set; }
-	public Klic(int id, string nazevMistnosti, string oznaceniDveri, int pocetVyrobenychKusu)
+	public StavKlice StavKlice { get; set; }
+	public Klic(string nazevMistnosti, string oznaceniDveri, int pocetVyrobenychKusu, StavKlice stavKlice, int id = -1)
 	{
 		Id = id;
 		NazevMistnosti = nazevMistnosti;

@@ -111,7 +111,7 @@ partial class VychoziOknoZamestnanec
 		tabulkaKlice.Location = new Point(6, 22);
 		tabulkaKlice.Name = "tabulkaKlice";
 		tabulkaKlice.RowTemplate.Height = 25;
-		tabulkaKlice.Size = new Size(643, 239);
+		tabulkaKlice.Size = new Size(658, 239);
 		tabulkaKlice.TabIndex = 8;
 		// 
 		// IdKlice
@@ -158,7 +158,7 @@ partial class VychoziOknoZamestnanec
 		groupBox1.Controls.Add(groupBox2);
 		groupBox1.Location = new Point(12, 12);
 		groupBox1.Name = "groupBox1";
-		groupBox1.Size = new Size(954, 297);
+		groupBox1.Size = new Size(962, 297);
 		groupBox1.TabIndex = 9;
 		groupBox1.TabStop = false;
 		groupBox1.Text = "Zaměstnanec";
@@ -168,7 +168,7 @@ partial class VychoziOknoZamestnanec
 		groupBox7.Controls.Add(tabulkaKlice);
 		groupBox7.Location = new Point(287, 22);
 		groupBox7.Name = "groupBox7";
-		groupBox7.Size = new Size(658, 267);
+		groupBox7.Size = new Size(669, 267);
 		groupBox7.TabIndex = 7;
 		groupBox7.TabStop = false;
 		groupBox7.Text = "Zapůjčené klíče";
@@ -236,7 +236,7 @@ partial class VychoziOknoZamestnanec
 		// 
 		AutoScaleDimensions = new SizeF(7F, 15F);
 		AutoScaleMode = AutoScaleMode.Font;
-		ClientSize = new Size(972, 311);
+		ClientSize = new Size(979, 311);
 		Controls.Add(groupBox1);
 		Margin = new Padding(4, 3, 4, 3);
 		MaximumSize = new Size(2000, 2000);
@@ -263,7 +263,6 @@ partial class VychoziOknoZamestnanec
     protected TextBox textBoxZkratka;
     protected Button buttonZavrit;
     protected Button buttonOk;
-	private DataGridView tabulkaKlice;
 	private GroupBox groupBox1;
 	private GroupBox groupBox7;
 	private GroupBox groupBox6;
@@ -278,4 +277,5 @@ partial class VychoziOknoZamestnanec
 	private DataGridViewTextBoxColumn Stav;
 	private DataGridViewTextBoxColumn Zapujcit;
 	private DataGridViewTextBoxColumn Vratit;
+	protected DataGridView tabulkaKlice;
 }
