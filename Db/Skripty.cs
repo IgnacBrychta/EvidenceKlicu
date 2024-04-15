@@ -19,5 +19,13 @@ internal static class Skripty
 	public const string VytvoritDatabazi = "CREATE DATABASE EvidenceKlicu.sql";
 	public const string PridatZamestnance = "INSERT Zamestnanec.sql";
 	public const string UpravitZamestnance = "UPDATE Zamestnance.sql";
-	public const string OdstranitZamestnance = "DELETE Zamestnance.sql";
+	public const string OdstranitZamestnance = "DELETE Zamestnanec.sql";
+	public const string ZiskatVsechnyZamestnance = "SELECT all Zamestnanci.sql";
+	public const string ZiskatZamestnance = "SELECT Zamestnanec.sql";
+	public const string ZiskatKlic = "SELECT Klic.sql";
+
+
+
+
+
 }

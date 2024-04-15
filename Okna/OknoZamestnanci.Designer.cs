@@ -20,220 +20,263 @@ partial class OknoZamestnanci
         base.Dispose(disposing);
     }
 
-    #region Kód generovaný Návrhářem Windows Form
+	#region Kód generovaný Návrhářem Windows Form
 
-    /// <summary>
-    /// Metoda vyžadovaná pro podporu Návrháře - neupravovat
-    /// obsah této metody v editoru kódu.
-    /// </summary>
-    private void InitializeComponent()
-    {
-        dataGridView = new DataGridView();
-        label1 = new Label();
-        menuStrip1 = new MenuStrip();
-        pridatZamestnance = new ToolStripMenuItem();
-        upravitZamestnance = new ToolStripMenuItem();
-        odstranitZamestnance = new ToolStripMenuItem();
-        dataGridView1 = new DataGridView();
-        label2 = new Label();
-        Id = new DataGridViewTextBoxColumn();
-        Jmeno = new DataGridViewTextBoxColumn();
-        Prijmeni = new DataGridViewTextBoxColumn();
-        Zkratka = new DataGridViewTextBoxColumn();
-        Akce = new DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-        NazevMistnosti = new DataGridViewTextBoxColumn();
-        OznaceniMistnosti = new DataGridViewTextBoxColumn();
-        PocetKusu = new DataGridViewTextBoxColumn();
-        PocetZapujcenych = new DataGridViewTextBoxColumn();
-        Akcee = new DataGridViewTextBoxColumn();
-        ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
-        menuStrip1.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-        SuspendLayout();
-        // 
-        // dataGridView
-        // 
-        dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridView.Columns.AddRange(new DataGridViewColumn[] { Id, Jmeno, Prijmeni, Zkratka, Akce });
-        dataGridView.Location = new Point(20, 61);
-        dataGridView.Margin = new Padding(4, 3, 4, 3);
-        dataGridView.Name = "dataGridView";
-        dataGridView.Size = new Size(541, 540);
-        dataGridView.TabIndex = 0;
-        dataGridView.CellContentClick += dataGridView_CellContentClick;
-        // 
-        // label1
-        // 
-        label1.AutoSize = true;
-        label1.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
-        label1.Location = new Point(14, 28);
-        label1.Margin = new Padding(4, 0, 4, 0);
-        label1.Name = "label1";
-        label1.Size = new Size(137, 26);
-        label1.TabIndex = 1;
-        label1.Text = "Zaměstnanci";
-        // 
-        // menuStrip1
-        // 
-        menuStrip1.Items.AddRange(new ToolStripItem[] { pridatZamestnance, upravitZamestnance, odstranitZamestnance });
-        menuStrip1.Location = new Point(0, 0);
-        menuStrip1.Name = "menuStrip1";
-        menuStrip1.Padding = new Padding(7, 2, 0, 2);
-        menuStrip1.Size = new Size(1225, 24);
-        menuStrip1.TabIndex = 2;
-        menuStrip1.Text = "menuStrip1";
-        // 
-        // pridatZamestnance
-        // 
-        pridatZamestnance.Name = "pridatZamestnance";
-        pridatZamestnance.Size = new Size(50, 20);
-        pridatZamestnance.Text = "Přidat";
-        pridatZamestnance.Click += pridatZamestnance_Click;
-        // 
-        // upravitZamestnance
-        // 
-        upravitZamestnance.Name = "upravitZamestnance";
-        upravitZamestnance.Size = new Size(57, 20);
-        upravitZamestnance.Text = "Upravit";
-        upravitZamestnance.Click += upravitZamestnance_Click;
-        // 
-        // odstranitZamestnance
-        // 
-        odstranitZamestnance.Name = "odstranitZamestnance";
-        odstranitZamestnance.Size = new Size(68, 20);
-        odstranitZamestnance.Text = "Odstranit";
-        odstranitZamestnance.Click += odstranitZamestnance_Click;
-        // 
-        // dataGridView1
-        // 
-        dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, NazevMistnosti, OznaceniMistnosti, PocetKusu, PocetZapujcenych, Akcee });
-        dataGridView1.Location = new Point(569, 61);
-        dataGridView1.Margin = new Padding(4, 3, 4, 3);
-        dataGridView1.Name = "dataGridView1";
-        dataGridView1.Size = new Size(640, 540);
-        dataGridView1.TabIndex = 3;
-        // 
-        // label2
-        // 
-        label2.AutoSize = true;
-        label2.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
-        label2.Location = new Point(569, 28);
-        label2.Margin = new Padding(4, 0, 4, 0);
-        label2.Name = "label2";
-        label2.Size = new Size(60, 26);
-        label2.TabIndex = 4;
-        label2.Text = "Klíče";
-        // 
-        // Id
-        // 
-        Id.HeaderText = "Id";
-        Id.Name = "Id";
-        Id.ReadOnly = true;
-        // 
-        // Jmeno
-        // 
-        Jmeno.HeaderText = "Jméno";
-        Jmeno.Name = "Jmeno";
-        Jmeno.ReadOnly = true;
-        // 
-        // Prijmeni
-        // 
-        Prijmeni.HeaderText = "Příjmení";
-        Prijmeni.Name = "Prijmeni";
-        Prijmeni.ReadOnly = true;
-        // 
-        // Zkratka
-        // 
-        Zkratka.HeaderText = "Zkratka";
-        Zkratka.Name = "Zkratka";
-        Zkratka.ReadOnly = true;
-        // 
-        // Akce
-        // 
-        Akce.HeaderText = "Akce";
-        Akce.Name = "Akce";
-        Akce.ReadOnly = true;
-        // 
-        // dataGridViewTextBoxColumn1
-        // 
-        dataGridViewTextBoxColumn1.HeaderText = "Id";
-        dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-        dataGridViewTextBoxColumn1.ReadOnly = true;
-        // 
-        // NazevMistnosti
-        // 
-        NazevMistnosti.HeaderText = "Název Místnosti";
-        NazevMistnosti.Name = "NazevMistnosti";
-        NazevMistnosti.ReadOnly = true;
-        // 
-        // OznaceniMistnosti
-        // 
-        OznaceniMistnosti.HeaderText = "Označení místnosti";
-        OznaceniMistnosti.Name = "OznaceniMistnosti";
-        OznaceniMistnosti.ReadOnly = true;
-        // 
-        // PocetKusu
-        // 
-        PocetKusu.HeaderText = "Počet kusů";
-        PocetKusu.Name = "PocetKusu";
-        PocetKusu.ReadOnly = true;
-        // 
-        // PocetZapujcenych
-        // 
-        PocetZapujcenych.HeaderText = "Počet zapůjčených";
-        PocetZapujcenych.Name = "PocetZapujcenych";
-        PocetZapujcenych.ReadOnly = true;
-        // 
-        // Akcee
-        // 
-        Akcee.HeaderText = "Akce";
-        Akcee.Name = "Akcee";
-        Akcee.ReadOnly = true;
-        // 
-        // OknoZamestnanci
-        // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
-        AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(1225, 615);
-        Controls.Add(label2);
-        Controls.Add(dataGridView1);
-        Controls.Add(label1);
-        Controls.Add(dataGridView);
-        Controls.Add(menuStrip1);
-        MainMenuStrip = menuStrip1;
-        Margin = new Padding(4, 3, 4, 3);
-        Name = "OknoZamestnanci";
-        Text = "Form1";
-        ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
-        menuStrip1.ResumeLayout(false);
-        menuStrip1.PerformLayout();
-        ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-        ResumeLayout(false);
-        PerformLayout();
-    }
+	/// <summary>
+	/// Metoda vyžadovaná pro podporu Návrháře - neupravovat
+	/// obsah této metody v editoru kódu.
+	/// </summary>
+	private void InitializeComponent()
+	{
+		tabulkaZamestnanci = new DataGridView();
+		Id = new DataGridViewTextBoxColumn();
+		Jmeno = new DataGridViewTextBoxColumn();
+		Prijmeni = new DataGridViewTextBoxColumn();
+		Zkratka = new DataGridViewTextBoxColumn();
+		AkceUpravitZamestnance = new DataGridViewButtonColumn();
+		AkceOdstranitZamestnance = new DataGridViewButtonColumn();
+		menuStrip1 = new MenuStrip();
+		pridatZamestnance = new ToolStripMenuItem();
+		upravitZamestnance = new ToolStripMenuItem();
+		odstranitZamestnance = new ToolStripMenuItem();
+		tabulkaKlice = new DataGridView();
+		dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+		NazevMistnosti = new DataGridViewTextBoxColumn();
+		OznaceniMistnosti = new DataGridViewTextBoxColumn();
+		PocetKusu = new DataGridViewTextBoxColumn();
+		PocetZapujcenych = new DataGridViewTextBoxColumn();
+		AkceUpravitKlic = new DataGridViewButtonColumn();
+		AkceOdstranitKlic = new DataGridViewButtonColumn();
+		groupBox1 = new GroupBox();
+		groupBox2 = new GroupBox();
+		toolStripMenuItemNovyZamestnanec = new ToolStripMenuItem();
+		toolStripMenuItemNovyKlic = new ToolStripMenuItem();
+		((System.ComponentModel.ISupportInitialize)tabulkaZamestnanci).BeginInit();
+		menuStrip1.SuspendLayout();
+		((System.ComponentModel.ISupportInitialize)tabulkaKlice).BeginInit();
+		groupBox1.SuspendLayout();
+		groupBox2.SuspendLayout();
+		SuspendLayout();
+		// 
+		// tabulkaZamestnanci
+		// 
+		tabulkaZamestnanci.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+		tabulkaZamestnanci.Columns.AddRange(new DataGridViewColumn[] { Id, Jmeno, Prijmeni, Zkratka, AkceUpravitZamestnance, AkceOdstranitZamestnance });
+		tabulkaZamestnanci.Location = new Point(7, 22);
+		tabulkaZamestnanci.Margin = new Padding(4, 3, 4, 3);
+		tabulkaZamestnanci.Name = "tabulkaZamestnanci";
+		tabulkaZamestnanci.Size = new Size(644, 540);
+		tabulkaZamestnanci.TabIndex = 0;
+		tabulkaZamestnanci.CellContentClick += dataGridView_CellContentClick;
+		// 
+		// Id
+		// 
+		Id.HeaderText = "Id";
+		Id.Name = "Id";
+		Id.ReadOnly = true;
+		// 
+		// Jmeno
+		// 
+		Jmeno.HeaderText = "Jméno";
+		Jmeno.Name = "Jmeno";
+		Jmeno.ReadOnly = true;
+		// 
+		// Prijmeni
+		// 
+		Prijmeni.HeaderText = "Příjmení";
+		Prijmeni.Name = "Prijmeni";
+		Prijmeni.ReadOnly = true;
+		// 
+		// Zkratka
+		// 
+		Zkratka.HeaderText = "Zkratka";
+		Zkratka.Name = "Zkratka";
+		Zkratka.ReadOnly = true;
+		// 
+		// AkceUpravitZamestnance
+		// 
+		AkceUpravitZamestnance.HeaderText = "Upravit";
+		AkceUpravitZamestnance.Name = "AkceUpravitZamestnance";
+		AkceUpravitZamestnance.ReadOnly = true;
+		AkceUpravitZamestnance.Resizable = DataGridViewTriState.True;
+		AkceUpravitZamestnance.SortMode = DataGridViewColumnSortMode.Automatic;
+		AkceUpravitZamestnance.Text = "";
+		// 
+		// AkceOdstranitZamestnance
+		// 
+		AkceOdstranitZamestnance.HeaderText = " Odstranit";
+		AkceOdstranitZamestnance.Name = "AkceOdstranitZamestnance";
+		AkceOdstranitZamestnance.ReadOnly = true;
+		AkceOdstranitZamestnance.Resizable = DataGridViewTriState.True;
+		AkceOdstranitZamestnance.SortMode = DataGridViewColumnSortMode.Automatic;
+		AkceOdstranitZamestnance.Text = "";
+		// 
+		// menuStrip1
+		// 
+		menuStrip1.Items.AddRange(new ToolStripItem[] { pridatZamestnance, upravitZamestnance, odstranitZamestnance });
+		menuStrip1.Location = new Point(0, 0);
+		menuStrip1.Name = "menuStrip1";
+		menuStrip1.Padding = new Padding(7, 2, 0, 2);
+		menuStrip1.Size = new Size(1350, 24);
+		menuStrip1.TabIndex = 2;
+		menuStrip1.Text = "menuStrip1";
+		// 
+		// pridatZamestnance
+		// 
+		pridatZamestnance.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItemNovyZamestnanec, toolStripMenuItemNovyKlic });
+		pridatZamestnance.Name = "pridatZamestnance";
+		pridatZamestnance.Size = new Size(59, 20);
+		pridatZamestnance.Text = "Přidat...";
+		pridatZamestnance.Click += pridatZamestnance_Click;
+		// 
+		// upravitZamestnance
+		// 
+		upravitZamestnance.Name = "upravitZamestnance";
+		upravitZamestnance.Size = new Size(57, 20);
+		upravitZamestnance.Text = "Upravit";
+		upravitZamestnance.Click += upravitZamestnance_Click;
+		// 
+		// odstranitZamestnance
+		// 
+		odstranitZamestnance.Name = "odstranitZamestnance";
+		odstranitZamestnance.Size = new Size(68, 20);
+		odstranitZamestnance.Text = "Odstranit";
+		odstranitZamestnance.Click += odstranitZamestnance_Click;
+		// 
+		// tabulkaKlice
+		// 
+		tabulkaKlice.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+		tabulkaKlice.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, NazevMistnosti, OznaceniMistnosti, PocetKusu, PocetZapujcenych, AkceUpravitKlic, AkceOdstranitKlic });
+		tabulkaKlice.Location = new Point(7, 22);
+		tabulkaKlice.Margin = new Padding(4, 3, 4, 3);
+		tabulkaKlice.Name = "tabulkaKlice";
+		tabulkaKlice.Size = new Size(640, 540);
+		tabulkaKlice.TabIndex = 3;
+		// 
+		// dataGridViewTextBoxColumn1
+		// 
+		dataGridViewTextBoxColumn1.HeaderText = "Id";
+		dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+		dataGridViewTextBoxColumn1.ReadOnly = true;
+		// 
+		// NazevMistnosti
+		// 
+		NazevMistnosti.HeaderText = "Název Místnosti";
+		NazevMistnosti.Name = "NazevMistnosti";
+		NazevMistnosti.ReadOnly = true;
+		// 
+		// OznaceniMistnosti
+		// 
+		OznaceniMistnosti.HeaderText = "Označení místnosti";
+		OznaceniMistnosti.Name = "OznaceniMistnosti";
+		OznaceniMistnosti.ReadOnly = true;
+		// 
+		// PocetKusu
+		// 
+		PocetKusu.HeaderText = "Počet kusů";
+		PocetKusu.Name = "PocetKusu";
+		PocetKusu.ReadOnly = true;
+		// 
+		// PocetZapujcenych
+		// 
+		PocetZapujcenych.HeaderText = "Počet zapůjčených";
+		PocetZapujcenych.Name = "PocetZapujcenych";
+		PocetZapujcenych.ReadOnly = true;
+		// 
+		// AkceUpravitKlic
+		// 
+		AkceUpravitKlic.HeaderText = " ";
+		AkceUpravitKlic.Name = "AkceUpravitKlic";
+		AkceUpravitKlic.ReadOnly = true;
+		AkceUpravitKlic.Resizable = DataGridViewTriState.True;
+		AkceUpravitKlic.SortMode = DataGridViewColumnSortMode.Automatic;
+		// 
+		// AkceOdstranitKlic
+		// 
+		AkceOdstranitKlic.HeaderText = " ";
+		AkceOdstranitKlic.Name = "AkceOdstranitKlic";
+		AkceOdstranitKlic.ReadOnly = true;
+		AkceOdstranitKlic.Resizable = DataGridViewTriState.True;
+		AkceOdstranitKlic.SortMode = DataGridViewColumnSortMode.Automatic;
+		// 
+		// groupBox1
+		// 
+		groupBox1.Controls.Add(tabulkaZamestnanci);
+		groupBox1.Location = new Point(12, 27);
+		groupBox1.Name = "groupBox1";
+		groupBox1.Size = new Size(659, 564);
+		groupBox1.TabIndex = 4;
+		groupBox1.TabStop = false;
+		groupBox1.Text = "Zaměstnanci";
+		// 
+		// groupBox2
+		// 
+		groupBox2.Controls.Add(tabulkaKlice);
+		groupBox2.Location = new Point(677, 27);
+		groupBox2.Name = "groupBox2";
+		groupBox2.Size = new Size(661, 545);
+		groupBox2.TabIndex = 5;
+		groupBox2.TabStop = false;
+		groupBox2.Text = "Klíče";
+		// 
+		// toolStripMenuItemNovyZamestnanec
+		// 
+		toolStripMenuItemNovyZamestnanec.Name = "toolStripMenuItemNovyZamestnanec";
+		toolStripMenuItemNovyZamestnanec.Size = new Size(180, 22);
+		toolStripMenuItemNovyZamestnanec.Text = "Nový zaměstnanec";
+		// 
+		// toolStripMenuItemNovyKlic
+		// 
+		toolStripMenuItemNovyKlic.Name = "toolStripMenuItemNovyKlic";
+		toolStripMenuItemNovyKlic.Size = new Size(180, 22);
+		toolStripMenuItemNovyKlic.Text = "Nový klíč";
+		// 
+		// OknoZamestnanci
+		// 
+		AutoScaleDimensions = new SizeF(7F, 15F);
+		AutoScaleMode = AutoScaleMode.Font;
+		ClientSize = new Size(1350, 615);
+		Controls.Add(groupBox2);
+		Controls.Add(groupBox1);
+		Controls.Add(menuStrip1);
+		MainMenuStrip = menuStrip1;
+		Margin = new Padding(4, 3, 4, 3);
+		Name = "OknoZamestnanci";
+		Text = "Form1";
+		((System.ComponentModel.ISupportInitialize)tabulkaZamestnanci).EndInit();
+		menuStrip1.ResumeLayout(false);
+		menuStrip1.PerformLayout();
+		((System.ComponentModel.ISupportInitialize)tabulkaKlice).EndInit();
+		groupBox1.ResumeLayout(false);
+		groupBox2.ResumeLayout(false);
+		ResumeLayout(false);
+		PerformLayout();
+	}
 
-    #endregion
+	#endregion
 
-    private DataGridView dataGridView;
-    private Label label1;
+	private DataGridView tabulkaZamestnanci;
     private MenuStrip menuStrip1;
     private ToolStripMenuItem pridatZamestnance;
     private ToolStripMenuItem upravitZamestnance;
     private ToolStripMenuItem odstranitZamestnance;
-    private DataGridView dataGridView1;
-    private Label label2;
-    private DataGridViewTextBoxColumn Id;
-    private DataGridViewTextBoxColumn Jmeno;
-    private DataGridViewTextBoxColumn Prijmeni;
-    private DataGridViewTextBoxColumn Zkratka;
-    private DataGridViewTextBoxColumn Akce;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-    private DataGridViewTextBoxColumn NazevMistnosti;
-    private DataGridViewTextBoxColumn OznaceniMistnosti;
-    private DataGridViewTextBoxColumn PocetKusu;
-    private DataGridViewTextBoxColumn PocetZapujcenych;
-    private DataGridViewTextBoxColumn Akcee;
+    private DataGridView tabulkaKlice;
+	private GroupBox groupBox1;
+	private GroupBox groupBox2;
+	private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+	private DataGridViewTextBoxColumn NazevMistnosti;
+	private DataGridViewTextBoxColumn OznaceniMistnosti;
+	private DataGridViewTextBoxColumn PocetKusu;
+	private DataGridViewTextBoxColumn PocetZapujcenych;
+	private DataGridViewButtonColumn AkceUpravitKlic;
+	private DataGridViewButtonColumn AkceOdstranitKlic;
+	private DataGridViewTextBoxColumn Id;
+	private DataGridViewTextBoxColumn Jmeno;
+	private DataGridViewTextBoxColumn Prijmeni;
+	private DataGridViewTextBoxColumn Zkratka;
+	private DataGridViewButtonColumn AkceUpravitZamestnance;
+	private DataGridViewButtonColumn AkceOdstranitZamestnance;
+	private ToolStripMenuItem toolStripMenuItemNovyZamestnanec;
+	private ToolStripMenuItem toolStripMenuItemNovyKlic;
 }
 

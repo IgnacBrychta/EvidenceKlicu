@@ -1,34 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using EvidenceKlicu.Db;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace EvidenceKlicu.Modely;
 
 public class Zamestnanec
 {
     public int Id { get; set; }
-    public string Jmeno { get; set; }
+	public string Jmeno { get; set; }
     public string Prijmeni { get; set; }
     public string Zkratka { get; set; }
-    public Zamestnanec(string jmeno, string prijmeni, string zkratka)
+    public Zamestnanec(string jmeno, string prijmeni, string zkratka, int id = -1)
     {
-        this.Jmeno = jmeno;
-        this.Prijmeni = prijmeni;
-        this.Zkratka = zkratka;
+        Id = id;
+        Jmeno = jmeno;
+        Prijmeni = prijmeni;
+        Zkratka = zkratka;
     }
 
-    public static bool JsouUdajeSpravne(string jmeno, string prijmeni, string zkratka)
+	public static bool JsouUdajeSpravne(string jmeno, string prijmeni, string zkratka, DbOmezeni dbOmezeni)
     {
-#warning proč 64? změnit na konstantu; důkladněji rozepsat ověření
-        return 
-            string.IsNullOrEmpty(jmeno) &&
-            jmeno.Length <= 64 &&
-            string.IsNullOrEmpty(prijmeni) &&
-            prijmeni.Length <= 64 &&
-            string.IsNullOrEmpty(zkratka) &&
-            Regex.IsMatch(zkratka, "^[A-Z]{2}$");
+#warning lepší oveření
+        return
+            !string.IsNullOrEmpty(jmeno) &&
+            jmeno.Length <= dbOmezeni.MaxPocetZnakuJmena &&
+            !string.IsNullOrEmpty(prijmeni) &&
+            prijmeni.Length <= dbOmezeni.MaxPocetZnakuJmena &&
+            !string.IsNullOrEmpty(zkratka) &&
+            zkratka.Length == dbOmezeni.PocetZnakuZkratky;
     }
+
+	public override string ToString()
+	{
+        return $"{Id}: {Prijmeni} {Jmeno} ({Zkratka})";
+	}
 }
