@@ -143,7 +143,7 @@ public class Database
 			{ PocetPujcenychKusu = (int)item[5] };
 		}
 	}
-
+	
 	public IEnumerable<Zamestnanec> ZiskatVsechnyZamestnance()
     {
 		string skript = NacistSkript(Skripty.ZiskatVsechnyZamestnance);
