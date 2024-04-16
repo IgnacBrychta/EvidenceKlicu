@@ -5,24 +5,24 @@ namespace EvidenceKlicu.Okna;
 
 public partial class OknoZamestnanci : Form
 {
-    Database? database;
-    public OknoZamestnanci()
-    {
-        InitializeComponent();
-    }
+	Database? database;
+	public OknoZamestnanci()
+	{
+		InitializeComponent();
+	}
 
-    public OknoZamestnanci(object? _)
-    {
-        InitializeComponent();
+	public OknoZamestnanci(object? _)
+	{
+		InitializeComponent();
 
-        string connectionString = "Server=localhost;Integrated security=True";
+		string connectionString = "Server=localhost;Integrated security=True";
 		database = new Database(connectionString);
-		if(!database.ExistujeDatabaze())
+		if (!database.ExistujeDatabaze())
 		{
 			database.VytvoritDatabazi();
 		}
-        database.ZmenitPripojovaciRetezec("Initial Catalog=EvidenceKlicu;Integrated Security=True;Encrypt=False");
-		if(database.ZjistitStavTabulkyKlice() != StavTabulky.Vporadku
+		database.ZmenitPripojovaciRetezec("Initial Catalog=EvidenceKlicu;Integrated Security=True;Encrypt=False");
+		if (database.ZjistitStavTabulkyKlice() != StavTabulky.Vporadku
 			|| database.ZjistitStavTabulkyZamestnanci() != StavTabulky.Vporadku
 			|| database.ZjistitStavTabulkyZaznamyVypujceni() != StavTabulky.Vporadku)
 		{
@@ -30,7 +30,7 @@ public partial class OknoZamestnanci : Form
 		}
 		FormClosing += HlavniOkno_FormClosing;
 
-        ObnovitTabulkuZamestnanci();
+		ObnovitTabulkuZamestnanci();
 		ObnovitTabulkuKlice();
 		tabulkaZamestnanci.CellContentClick += TabulkaZamestnanci_CellContentClick;
 		tabulkaKlice.CellContentClick += TabulkaKlice_CellContentClick;
@@ -39,7 +39,7 @@ public partial class OknoZamestnanci : Form
 		toolStripMenuItemNovyKlic.Click += ToolStripMenuItemNovyKlic_Click;
 
 		Text = "Evidence klíčů zapůjčených zaměstnancům";
-    }
+	}
 
 	private void TabulkaKlice_CellContentClick(object? sender, DataGridViewCellEventArgs e)
 	{
@@ -75,6 +75,7 @@ public partial class OknoZamestnanci : Form
 	private void ZmenaKlicu(object sender, EventArgs e)
 	{
 		ObnovitTabulkuKlice();
+		ObnovitTabulkuZamestnanci();
 	}
 
 	private void ToolStripMenuItemNovyKlic_Click(object? sender, EventArgs e)
@@ -86,20 +87,21 @@ public partial class OknoZamestnanci : Form
 
 	private void ToolStripMenuItemNovyZamestnanec_Click(object? sender, EventArgs e)
 	{
-        var okno = new OknoPridatZamestnance(database!);
+		var okno = new OknoPridatZamestnance(database!);
 		okno.ItemsChanged += ZmenaZamestnancu;
-        okno.Show();
+		okno.Show();
 	}
 
 	private void ZmenaZamestnancu(object sender, EventArgs e)
 	{
 		ObnovitTabulkuZamestnanci();
+		ObnovitTabulkuKlice();
 	}
 
 	const int indexId = 0;
-    private void ObnovitTabulkuZamestnanci()
-    {
-        tabulkaZamestnanci.Rows.Clear();
+	private void ObnovitTabulkuZamestnanci()
+	{
+		tabulkaZamestnanci.Rows.Clear();
 		IEnumerable<Zamestnanec> zamestnanci = database!.ZiskatVsechnyZamestnance();
 		foreach (Zamestnanec item in zamestnanci)
 		{
@@ -126,12 +128,12 @@ public partial class OknoZamestnanci : Form
 
 	private void TabulkaZamestnanci_CellContentClick(object? sender, DataGridViewCellEventArgs e)
 	{
-        if (e.RowIndex < 0 || e.RowIndex >= tabulkaZamestnanci.RowCount - 1) return;
+		if (e.RowIndex < 0 || e.RowIndex >= tabulkaZamestnanci.RowCount - 1) return;
 
 		DataGridViewRow selectedRow = tabulkaZamestnanci.Rows[e.RowIndex];
 		int id = (int)selectedRow.Cells[indexId].Value;
-        Zamestnanec? zamestnanec = database!.ZiskatZamestnance(id);
-        if (zamestnanec is null) return;
+		Zamestnanec? zamestnanec = database!.ZiskatZamestnance(id);
+		if (zamestnanec is null) return;
 
 		if (e.ColumnIndex == tabulkaZamestnanci.Columns["AkceUpravitZamestnance"].Index)
 		{
@@ -141,17 +143,17 @@ public partial class OknoZamestnanci : Form
 		}
 		else if (e.ColumnIndex == tabulkaZamestnanci.Columns["AkceOdstranitZamestnance"].Index)
 		{
-            DialogResult vysledek = MessageBox.Show(
-                $"Opravdu si přejete smazat zaměstnance {zamestnanec}?",
-                "Jste si jistí?",
-                MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Question
-                );
-            if(vysledek == DialogResult.OK)
-            {
-                database.OdstranitZamestnance(zamestnanec);
-                ObnovitTabulkuZamestnanci();
-            }
+			DialogResult vysledek = MessageBox.Show(
+				$"Opravdu si přejete smazat zaměstnance {zamestnanec}?",
+				"Jste si jistí?",
+				MessageBoxButtons.OKCancel,
+				MessageBoxIcon.Question
+				);
+			if (vysledek == DialogResult.OK)
+			{
+				database.OdstranitZamestnance(zamestnanec);
+				ObnovitTabulkuZamestnanci();
+			}
 		}
 	}
 
@@ -184,7 +186,7 @@ public partial class OknoZamestnanci : Form
 	}
 
 	private void HlavniOkno_FormClosing(object? sender, FormClosingEventArgs e)
-    {
-        database?.UzavritPripojeni();
-    }
+	{
+		database?.UzavritPripojeni();
+	}
 }

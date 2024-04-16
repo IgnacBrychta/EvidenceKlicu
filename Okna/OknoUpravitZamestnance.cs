@@ -75,6 +75,7 @@ namespace EvidenceKlicu.Okna
 			}
 
 			ObnovitTabulku(zamestnanec);
+			OnItemsChanged(e);
 		}
 
 		protected override void ButtonZavrit_Click(object? sender, EventArgs e)

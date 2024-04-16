@@ -2,23 +2,23 @@
 
 partial class OknoZamestnanci
 {
-    /// <summary>
-    /// Vyžaduje se proměnná návrháře.
-    /// </summary>
-    private System.ComponentModel.IContainer components = null;
+	/// <summary>
+	/// Vyžaduje se proměnná návrháře.
+	/// </summary>
+	private System.ComponentModel.IContainer components = null;
 
-    /// <summary>
-    /// Uvolněte všechny používané prostředky.
-    /// </summary>
-    /// <param name="disposing">hodnota true, když by se měl spravovaný prostředek odstranit; jinak false.</param>
-    protected override void Dispose(bool disposing)
-    {
-        if (disposing && (components != null))
-        {
-            components.Dispose();
-        }
-        base.Dispose(disposing);
-    }
+	/// <summary>
+	/// Uvolněte všechny používané prostředky.
+	/// </summary>
+	/// <param name="disposing">hodnota true, když by se měl spravovaný prostředek odstranit; jinak false.</param>
+	protected override void Dispose(bool disposing)
+	{
+		if (disposing && (components != null))
+		{
+			components.Dispose();
+		}
+		base.Dispose(disposing);
+	}
 
 	#region Kód generovaný Návrhářem Windows Form
 
@@ -40,16 +40,16 @@ partial class OknoZamestnanci
 		toolStripMenuItemNovyZamestnanec = new ToolStripMenuItem();
 		toolStripMenuItemNovyKlic = new ToolStripMenuItem();
 		tabulkaKlice = new DataGridView();
+		groupBox1 = new GroupBox();
+		groupBox2 = new GroupBox();
 		dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
 		Cislo = new DataGridViewTextBoxColumn();
 		NazevMistnosti = new DataGridViewTextBoxColumn();
 		OznaceniMistnosti = new DataGridViewTextBoxColumn();
 		PocetKusu = new DataGridViewTextBoxColumn();
-		PocetZapujcenych = new DataGridViewTextBoxColumn();
+		PocetDostupnych = new DataGridViewTextBoxColumn();
 		AkceUpravitKlic = new DataGridViewButtonColumn();
 		AkceOdstranitKlic = new DataGridViewButtonColumn();
-		groupBox1 = new GroupBox();
-		groupBox2 = new GroupBox();
 		((System.ComponentModel.ISupportInitialize)tabulkaZamestnanci).BeginInit();
 		menuStrip1.SuspendLayout();
 		((System.ComponentModel.ISupportInitialize)tabulkaKlice).BeginInit();
@@ -129,24 +129,44 @@ partial class OknoZamestnanci
 		// toolStripMenuItemNovyZamestnanec
 		// 
 		toolStripMenuItemNovyZamestnanec.Name = "toolStripMenuItemNovyZamestnanec";
-		toolStripMenuItemNovyZamestnanec.Size = new Size(180, 22);
+		toolStripMenuItemNovyZamestnanec.Size = new Size(174, 22);
 		toolStripMenuItemNovyZamestnanec.Text = "Nový zaměstnanec";
 		// 
 		// toolStripMenuItemNovyKlic
 		// 
 		toolStripMenuItemNovyKlic.Name = "toolStripMenuItemNovyKlic";
-		toolStripMenuItemNovyKlic.Size = new Size(180, 22);
+		toolStripMenuItemNovyKlic.Size = new Size(174, 22);
 		toolStripMenuItemNovyKlic.Text = "Nový klíč";
 		// 
 		// tabulkaKlice
 		// 
 		tabulkaKlice.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-		tabulkaKlice.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Cislo, NazevMistnosti, OznaceniMistnosti, PocetKusu, PocetZapujcenych, AkceUpravitKlic, AkceOdstranitKlic });
+		tabulkaKlice.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Cislo, NazevMistnosti, OznaceniMistnosti, PocetKusu, PocetDostupnych, AkceUpravitKlic, AkceOdstranitKlic });
 		tabulkaKlice.Location = new Point(7, 22);
 		tabulkaKlice.Margin = new Padding(4, 3, 4, 3);
 		tabulkaKlice.Name = "tabulkaKlice";
 		tabulkaKlice.Size = new Size(853, 540);
 		tabulkaKlice.TabIndex = 3;
+		// 
+		// groupBox1
+		// 
+		groupBox1.Controls.Add(tabulkaZamestnanci);
+		groupBox1.Location = new Point(12, 27);
+		groupBox1.Name = "groupBox1";
+		groupBox1.Size = new Size(659, 564);
+		groupBox1.TabIndex = 4;
+		groupBox1.TabStop = false;
+		groupBox1.Text = "Zaměstnanci";
+		// 
+		// groupBox2
+		// 
+		groupBox2.Controls.Add(tabulkaKlice);
+		groupBox2.Location = new Point(677, 27);
+		groupBox2.Name = "groupBox2";
+		groupBox2.Size = new Size(872, 545);
+		groupBox2.TabIndex = 5;
+		groupBox2.TabStop = false;
+		groupBox2.Text = "Klíče";
 		// 
 		// dataGridViewTextBoxColumn1
 		// 
@@ -178,11 +198,11 @@ partial class OknoZamestnanci
 		PocetKusu.Name = "PocetKusu";
 		PocetKusu.ReadOnly = true;
 		// 
-		// PocetZapujcenych
+		// PocetDostupnych
 		// 
-		PocetZapujcenych.HeaderText = "Počet zapůjčených";
-		PocetZapujcenych.Name = "PocetZapujcenych";
-		PocetZapujcenych.ReadOnly = true;
+		PocetDostupnych.HeaderText = "Počet dostupných";
+		PocetDostupnych.Name = "PocetDostupnych";
+		PocetDostupnych.ReadOnly = true;
 		// 
 		// AkceUpravitKlic
 		// 
@@ -201,26 +221,6 @@ partial class OknoZamestnanci
 		AkceOdstranitKlic.Resizable = DataGridViewTriState.True;
 		AkceOdstranitKlic.SortMode = DataGridViewColumnSortMode.Automatic;
 		AkceOdstranitKlic.Text = "";
-		// 
-		// groupBox1
-		// 
-		groupBox1.Controls.Add(tabulkaZamestnanci);
-		groupBox1.Location = new Point(12, 27);
-		groupBox1.Name = "groupBox1";
-		groupBox1.Size = new Size(659, 564);
-		groupBox1.TabIndex = 4;
-		groupBox1.TabStop = false;
-		groupBox1.Text = "Zaměstnanci";
-		// 
-		// groupBox2
-		// 
-		groupBox2.Controls.Add(tabulkaKlice);
-		groupBox2.Location = new Point(677, 27);
-		groupBox2.Name = "groupBox2";
-		groupBox2.Size = new Size(872, 545);
-		groupBox2.TabIndex = 5;
-		groupBox2.TabStop = false;
-		groupBox2.Text = "Klíče";
 		// 
 		// OknoZamestnanci
 		// 
@@ -247,9 +247,9 @@ partial class OknoZamestnanci
 	#endregion
 
 	private DataGridView tabulkaZamestnanci;
-    private MenuStrip menuStrip1;
-    private ToolStripMenuItem pridatZamestnance;
-    private DataGridView tabulkaKlice;
+	private MenuStrip menuStrip1;
+	private ToolStripMenuItem pridatZamestnance;
+	private DataGridView tabulkaKlice;
 	private GroupBox groupBox1;
 	private GroupBox groupBox2;
 	private DataGridViewTextBoxColumn Id;
@@ -265,7 +265,7 @@ partial class OknoZamestnanci
 	private DataGridViewTextBoxColumn NazevMistnosti;
 	private DataGridViewTextBoxColumn OznaceniMistnosti;
 	private DataGridViewTextBoxColumn PocetKusu;
-	private DataGridViewTextBoxColumn PocetZapujcenych;
+	private DataGridViewTextBoxColumn PocetDostupnych;
 	private DataGridViewButtonColumn AkceUpravitKlic;
 	private DataGridViewButtonColumn AkceOdstranitKlic;
 }
