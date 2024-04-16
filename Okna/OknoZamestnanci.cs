@@ -6,6 +6,7 @@ namespace EvidenceKlicu.Okna;
 public partial class OknoZamestnanci : Form
 {
 	Database? database;
+	public const string iconPath = "../../../res/database-storage.ico";
 	public OknoZamestnanci()
 	{
 		InitializeComponent();
@@ -30,6 +31,9 @@ public partial class OknoZamestnanci : Form
 				);
 			throw;
 		}
+
+		try { Icon = new Icon(iconPath); } catch (Exception) { }
+
 		if (!database.ExistujeDatabaze())
 		{
 			database.VytvoritDatabazi();

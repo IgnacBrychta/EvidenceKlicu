@@ -12,6 +12,7 @@ public partial class VychoziOknoKlice : Form
 		this.database = database;
 		buttonOk.Click += ButtonOk_Click;
 		buttonZavrit.Click += ButtonZavrit_Click;
+		try { Icon = new Icon(OknoZamestnanci.iconPath); } catch (Exception) { }
 	}
 
 	public VychoziOknoKlice()
@@ -38,9 +39,8 @@ public partial class VychoziOknoKlice : Form
 
 	private void VychoziOknoZamestnanec_Load(object? sender, EventArgs e)
 	{
-		Size size = new Size(1140, 350);
-		MinimumSize = size;
-		MaximumSize = size;
+		MinimumSize = Size;
+		MaximumSize = Size;
 	}
 
 	protected void ObnovitTabulku(Klic klic)

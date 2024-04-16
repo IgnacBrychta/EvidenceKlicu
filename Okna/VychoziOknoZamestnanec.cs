@@ -19,6 +19,7 @@ public partial class VychoziOknoZamestnanec : Form
 		buttonOk.Click += ButtonOk_Click;
 		buttonZavrit.Click += ButtonZavrit_Click;
 		tabulkaKlice.CellContentClick += TabulkaKlice_CellContentClick;
+		try { Icon = new Icon(OknoZamestnanci.iconPath); } catch (Exception) { }
 	}
 
 	public delegate void ItemsChangedEventHandler(object sender, EventArgs e);
@@ -45,9 +46,8 @@ public partial class VychoziOknoZamestnanec : Form
 
 	private void VychoziOknoZamestnanec_Load(object? sender, EventArgs e)
 	{
-		Size size = new Size(1140, 350);
-		MinimumSize = size;
-		MaximumSize = size;
+		MinimumSize = Size;
+		MaximumSize = Size;
 	}
 
 	protected void ObnovitTabulku(Zamestnanec zamestnanec)
