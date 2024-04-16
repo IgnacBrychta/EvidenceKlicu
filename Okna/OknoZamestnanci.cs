@@ -16,7 +16,20 @@ public partial class OknoZamestnanci : Form
 		InitializeComponent();
 
 		string connectionString = "Server=localhost;Integrated security=True";
-		database = new Database(connectionString);
+		try
+		{
+			database = new Database(connectionString);
+		}
+		catch (Exception)
+		{
+			MessageBox.Show(
+				"Aplikaci nebylo možné spustit, připojení na databázi nemohlo být uskutečněno. Ujištěte se, že máte lokálně nainstalovaný Microsoft SQL Server a že je spuštěn.",
+				"Kritická chyba",
+				MessageBoxButtons.OK,
+				MessageBoxIcon.Error
+				);
+			throw;
+		}
 		if (!database.ExistujeDatabaze())
 		{
 			database.VytvoritDatabazi();
